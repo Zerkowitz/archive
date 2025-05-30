@@ -1,138 +1,79 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title>Worldarchive - Restaurar Fotos</title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1894.7">
-  <style type="text/css">
-    body {background-color: #f9f9f9}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8" />
+    <title>Worldarchive - Restaurar Fotos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007acc;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #005f99;
+        }
+        .message {
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        img.restored {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>&lt;!DOCTYPE html&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>&lt;html lang="es"&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>&lt;head&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;title&gt;Worldarchive&lt;/title&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;style&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>body {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>margin: 0;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>background-color: #f5f6f8;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>color: #333;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>header {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>background-color: #ffffff;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>padding: 1rem 2rem;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>display: flex;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>justify-content: space-between;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>align-items: center;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>border-bottom: 1px solid #e0e0e0;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>position: sticky;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>top: 0;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>z-index: 100;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>header h1 {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>font-size: 1.5rem;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>margin: 0;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>color: #222;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>nav a {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>margin-left: 1.5rem;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>text-decoration: none;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>color: #1976d2;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>font-weight: 500;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>.container {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>max-width: 600px;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>margin: 3rem auto;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>background-color: #fff;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>padding: 2rem;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius: 12px;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>text-align: center;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>h2 {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>margin-bottom: 1rem;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>font-weight: 600;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>input[type="file"] {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>margin: 1rem 0;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>button {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>background-color: #1976d2;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>color: white;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>border: none;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>padding: 0.75rem 1.5rem;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>font-size: 1rem;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius: 6px;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>cursor: pointer;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>button:hover {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>background-color: #145ea8;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>.message {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>margin-top: 1rem;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>padding: 1rem;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius: 6px;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>.success {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>background-color: #e6f4ea;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>color: #1b5e20;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>.error {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>background-color: #fdecea;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>color: #c62828;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>.preview {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>margin-top: 2rem;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>.preview img {</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>max-width: 100%;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius: 8px;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>box-shadow: 0 0 10px #ccc;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;/style&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>&lt;/head&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>&lt;body&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;header&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;h1&gt;Worldarchive&lt;/h1&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;nav&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;a href="#"&gt;Subir&lt;/a&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;a href="#"&gt;Login&lt;/a&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;/nav&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;/header&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;div class="container"&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;h2&gt;Restauración automática de fotografías&lt;/h2&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;p&gt;Sube una imagen antigua y nuestra IA la mejorará automáticamente.&lt;/p&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;form action="/upload/" method="post" enctype="multipart/form-data"&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;input type="file" name="file" accept=".jpg,.jpeg,.png" required /&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;br /&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;button type="submit"&gt;Subir y Restaurar&lt;/button&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;/form&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>{% if message %}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;div class="message {% if 'error' in message.lower() %}error{% else %}success{% endif %}"&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>{{ message }}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;/div&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>{% endif %}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>{% if result_url %}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;div class="preview"&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;h3&gt;Imagen Restaurada:&lt;/h3&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;img src="{{ result_url }}" alt="Imagen restaurada" /&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;/div&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">    </span>{% endif %}</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;/div&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626; min-height: 28.0px"><span class="s1"><b></b></span><br></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>&lt;/body&gt;</b></span></h1>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; font: 24.0px Arial; color: #262626; -webkit-text-stroke: #262626"><span class="s1"><b>&lt;/html&gt;</b></span></h1>
+    <h1>Worldarchive - Restaurar Fotos</h1>
+
+    <form action="/upload/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg,.jpeg,.png" required />
+        <br />
+        <button type="submit">Subir y Restaurar</button>
+    </form>
+
+    {% if message %}
+    <div class="message {% if 'error' in message.lower() %}error{% else %}success{% endif %}">
+        {{ message }}
+    </div>
+    {% endif %}
+
+    {% if result_url %}
+    <img class="restored" src="{{ result_url }}" alt="Imagen restaurada" />
+    {% endif %}
 </body>
 </html>
