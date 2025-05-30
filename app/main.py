@@ -7,7 +7,8 @@ import os
 import uuid
 
 app = FastAPI()
-templates = Jinja2Templates(directory="../templates")
+import os
+templates = Jinja2Templates(directory=os.path.join(os.path.dirname(__file__), "../templates"))
 
 UPLOAD_DIR = "static/uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
