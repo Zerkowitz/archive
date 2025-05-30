@@ -1,104 +1,131 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Worldarchive - Restauración de Fotografías</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f2f2f2;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 40px;
-            background-color: #fff;
-            border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-        }
-        h1 {
-            text-align: center;
-            font-size: 2rem;
-            color: #222;
-            margin-bottom: 20px;
-        }
-        p.description {
-            text-align: center;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        input[type="file"] {
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            width: 100%;
-        }
-        button {
-            padding: 12px 24px;
-            background-color: #007bff;
-            border: none;
-            color: white;
-            font-weight: 600;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .message {
-            text-align: center;
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 8px;
-        }
-        .error {
-            background-color: #f8d7da;
-            color: #721c24;
-        }
-        .success {
-            background-color: #d4edda;
-            color: #155724;
-        }
-        .image-preview {
-            display: block;
-            margin: 30px auto 0;
-            max-width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Worldarchive - Archiva y Restaura Fotografías</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f7f8fa;
+      color: #333;
+    }
+    header {
+      background: #1e293b;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .description {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    input[type="file"] {
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 30px;
+      background-color: #3b82f6;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2563eb;
+    }
+    .message {
+      margin: 20px auto;
+      padding: 12px;
+      border-radius: 8px;
+      max-width: 600px;
+      text-align: center;
+    }
+    .success {
+      background-color: #d1fae5;
+      color: #065f46;
+    }
+    .error {
+      background-color: #fee2e2;
+      color: #991b1b;
+    }
+    .preview {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .preview img {
+      max-width: 100%;
+      max-height: 500px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85rem;
+      color: #999;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Worldarchive</h1>
-        <p class="description">Sube una fotografía antigua para restaurarla automáticamente con inteligencia artificial.</p>
+  <header>
+    <h1>Worldarchive</h1>
+    <p>Restaura y organiza automáticamente tus fotografías antiguas</p>
+  </header>
 
-        <form action="/upload/" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" accept=".jpg,.jpeg,.png" required>
-            <button type="submit">Subir y Restaurar</button>
-        </form>
-
-        {% if message %}
-            <div class="message {% if 'error' in message.lower() %}error{% else %}success{% endif %}">
-                {{ message }}
-            </div>
-        {% endif %}
-
-        {% if result_url %}
-            <img src="{{ result_url }}" alt="Imagen restaurada" class="image-preview" />
-        {% endif %}
+  <main class="container">
+    <div class="description">
+      <p>Sube una fotografía para restaurarla con inteligencia artificial. Una vez procesada, podrás ver y descargar la versión restaurada directamente.</p>
     </div>
+
+    <form action="/upload/" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".jpg,.jpeg,.png" required />
+      <button type="submit">Subir y Restaurar</button>
+    </form>
+
+    {% if message %}
+    <div class="message {% if 'error' in message.lower() %}error{% else %}success{% endif %}">
+      {{ message }}
+    </div>
+    {% endif %}
+
+    {% if result_url %}
+    <div class="preview">
+      <img src="{{ result_url }}" alt="Imagen restaurada" />
+    </div>
+    {% endif %}
+  </main>
+
+  <footer>
+    &copy; 2025 Worldarchive. Todos los derechos reservados.
+  </footer>
 </body>
 </html>
