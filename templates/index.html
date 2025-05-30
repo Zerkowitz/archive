@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Worldarchive - Restaurar Fotos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #fafafa;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #1976d2;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #135ea1;
+        }
+        .message {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .error {
+            background: #f8d7da;
+            color: #842029;
+        }
+        .success {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+        img.restored {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Worldarchive - Restaurar Fotos</h1>
+
+    <form action="/upload/" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg,.jpeg,.png" required />
+        <br />
+        <button type="submit">Subir y Restaurar</button>
+    </form>
+
+    {% if message %}
+        <div class="message {% if 'error' in message.lower() %}error{% else %}success{% endif %}">
+            {{ message }}
+        </div>
+    {% endif %}
+
+    {% if result_url %}
+        <img class="restored" src="{{ result_url }}" alt="Imagen restaurada" />
+    {% endif %}
+</body>
+</html>

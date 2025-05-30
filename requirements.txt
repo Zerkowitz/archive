@@ -1,4 +1,5 @@
 fastapi
 uvicorn
-replicate
+jinja2
 python-multipart
+replicate
